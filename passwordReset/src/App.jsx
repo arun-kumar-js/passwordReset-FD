@@ -11,7 +11,7 @@ export const App = () => {
   const routes = [
     {
       path: "/",
-      element: <Login />, // Correct lowercase 'element'
+      element: <Login />,
     },
     {
       path: "/register",
@@ -35,7 +35,16 @@ export const App = () => {
     },
   ];
 
-  const router = createBrowserRouter(routes);
+  const router = createBrowserRouter(routes, {
+    future: {
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_skipActionErrorRevalidation: true,
+      v7_skipActionStatusRevalidation: true,
+      v7_partialHydration: true,
+      v7_startTransition: true,
+    },
+  });
 
   return <RouterProvider router={router} />;
 };

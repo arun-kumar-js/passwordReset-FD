@@ -22,7 +22,7 @@ const forgetPassword = () => {
       );
       setMessage(response.data.message);
       setTimeout(() => {
-        navigate("/update-password");
+        navigate("/changePassword");
       }, 2000);
     } catch (error) {
       setMessage(error.response?.data?.message || "Something went wrong");
